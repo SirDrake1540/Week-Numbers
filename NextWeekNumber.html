@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Next Week Number</title>
+</head>
+<body>
+    <div id="weekNumber">Loading next week number...</div>
+    <script>
+        function getNextWeekNumber(d) {
+            var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+            var dayOfYear = Math.floor((d - yearStart) / 86400000 + 1);
+            var weekNo = Math.ceil(dayOfYear / 7);
+            return weekNo + 1;
+        }
+
+        var nextWeekNumber = getNextWeekNumber(new Date());
+        document.getElementById('weekNumber').innerHTML = 'Next Week Number: ' + nextWeekNumber;
+    </script>
+</body>
+</html>
+
